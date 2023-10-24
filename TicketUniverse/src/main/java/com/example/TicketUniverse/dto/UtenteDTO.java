@@ -4,16 +4,16 @@ import com.example.TicketUniverse.model.Prenotazione;
 
 import java.util.List;
 
-public class UtendeDTO {
+public class UtenteDTO {
 
     private String nome;
     private String cognome;
     private String password;
     private String email;
     private String codiceFiscale;
-    private List<Prenotazione> prenotazioni;
+    private List<PrenotazioneDTO> prenotazioni;
 
-    public UtendeDTO() {
+    public UtenteDTO() {
     }
 
     public String getNome() {
@@ -56,11 +56,11 @@ public class UtendeDTO {
         this.codiceFiscale = codiceFiscale;
     }
 
-    public List<Prenotazione> getPrenotazioni() {
+    public List<PrenotazioneDTO> getPrenotazioni() {
         return prenotazioni;
     }
 
-    public void setPrenotazioni(List<Prenotazione> prenotazioni) {
+    public void setPrenotazioni(List<PrenotazioneDTO> prenotazioni) {
         this.prenotazioni = prenotazioni;
     }
 }

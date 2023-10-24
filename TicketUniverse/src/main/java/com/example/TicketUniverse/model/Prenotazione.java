@@ -13,7 +13,7 @@ public class Prenotazione {
     private Long id;
     private LocalDateTime data;
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "id_utente")
     private Utente utente;
     private Integer quantitaPrenotata;
     private Boolean isConvalidata;

@@ -1,17 +1,14 @@
 package com.example.TicketUniverse.dto;
 
-import com.example.TicketUniverse.model.Categoria;
-import com.example.TicketUniverse.model.Localita;
-
 public class EventoDTO {
 
 
     private String nome;
     private String descrizione;
-    private double prezzo;
-    private int bigliettiDisponibili;
-    private Categoria categoria;
-    private Localita localita;
+    private Double prezzo;
+    private Integer bigliettiDisponibili;
+    private CategoriaDTO categoria;
+    private LocalitaDTO localita;
 
 
     public EventoDTO() {
@@ -49,19 +46,19 @@ public class EventoDTO {
         this.bigliettiDisponibili = bigliettiDisponibili;
     }
 
-    public Categoria getCategoria() {
+    public CategoriaDTO getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(Categoria categoria) {
+    public void setCategoria(CategoriaDTO categoria) {
         this.categoria = categoria;
     }
 
-    public Localita getLocalita() {
+    public LocalitaDTO getLocalita() {
         return localita;
     }
 
-    public void setLocalita(Localita localita) {
+    public void setLocalita(LocalitaDTO localita) {
         this.localita = localita;
     }
 }

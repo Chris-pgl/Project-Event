@@ -8,7 +8,7 @@ public class CategoriaDTO {
 
 
     private String nome;
-    private List<Evento> eventi;
+    private List<EventoDTO> eventi;
 
     public CategoriaDTO() {
     }
@@ -21,11 +21,11 @@ public class CategoriaDTO {
         this.nome = nome;
     }
 
-    public List<Evento> getEventi() {
+    public List<EventoDTO> getEventi() {
         return eventi;
     }
 
-    public void setEventi(List<Evento> eventi) {
+    public void setEventi(List<EventoDTO> eventi) {
         this.eventi = eventi;
     }
 }

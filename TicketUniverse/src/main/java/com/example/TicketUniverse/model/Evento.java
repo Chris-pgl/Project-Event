@@ -1,51 +1,28 @@
 package com.example.TicketUniverse.model;
 
-import java.time.LocalDateTime;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
+@Table
 public class Evento {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_evento")
-	private Long id;
-	private LocalDateTime data;
-	private String nome;
-	private String descrizione;
-	private double prezzo;
-	private int bigliettiDisponibili;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_categoria")
-	private Categoria categoria;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_localita")
-	private Localita localita;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private LocalDate data;
+    private String nome;
+    @ManyToOne
+    @JoinColumn(name = "id_localita")
+    private Localita localita;
+    private String descrizione;
+    private Double prezzo;
+    private Integer bigliettiDisponibili;
+    @ManyToOne
+    @JoinColumn(name = "id_categoria")
+    private Categoria categoria;
 
-	public Evento() {
-	}
-
-	public Evento(Long id, LocalDateTime data, String nome, String descrizione, double prezzo, int bigliettiDisponibili,
-			Categoria categoria, Localita localita) {
-		this.id = id;
-		this.data = data;
-		this.nome = nome;
-		this.descrizione = descrizione;
-		this.prezzo = prezzo;
-		this.bigliettiDisponibili = bigliettiDisponibili;
-		this.categoria = categoria;
-		this.localita = localita;
-	}
-	
-	
 }

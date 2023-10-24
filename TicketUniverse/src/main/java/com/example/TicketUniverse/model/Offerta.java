@@ -1,6 +1,8 @@
 package com.example.TicketUniverse.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
@@ -10,6 +12,7 @@ import java.util.List;
 @Data
 public class Offerta {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private List<Evento> eventiOfferta;
     private Double prezzoMedio;

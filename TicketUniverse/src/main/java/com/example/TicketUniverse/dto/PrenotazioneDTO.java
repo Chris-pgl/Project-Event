@@ -8,7 +8,7 @@ public class PrenotazioneDTO {
 
     private LocalDateTime data;
 
-    private Utente utente;
+    private UtenteDTO utente;
 
     private Integer quantitaPrenotata;
 
@@ -27,11 +27,11 @@ public class PrenotazioneDTO {
         this.data = data;
     }
 
-    public Utente getUtente() {
+    public UtenteDTO getUtente() {
         return utente;
     }
 
-    public void setUtente(Utente utente) {
+    public void setUtente(UtenteDTO utente) {
         this.utente = utente;
     }
 

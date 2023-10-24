@@ -1,7 +1,5 @@
 package com.example.TicketUniverse.dto;
 
-import com.example.TicketUniverse.model.Evento;
-
 import java.util.List;
 
 public class LocalitaDTO {
@@ -9,7 +7,7 @@ public class LocalitaDTO {
     private String regione;
     private String provincia;
     private String citta;
-    private List<Evento> eventi;
+    private List<EventoDTO> eventi;
 
     public LocalitaDTO() {
     }
@@ -38,11 +36,11 @@ public class LocalitaDTO {
         this.citta = citta;
     }
 
-    public List<Evento> getEventi() {
+    public List<EventoDTO> getEventi() {
         return eventi;
     }
 
-    public void setEventi(List<Evento> eventi) {
+    public void setEventi(List<EventoDTO> eventi) {
         this.eventi = eventi;
     }
 }
