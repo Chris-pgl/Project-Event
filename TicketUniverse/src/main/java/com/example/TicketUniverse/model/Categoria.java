@@ -1,4 +1,4 @@
-package model;
+package com.example.TicketUniverse.model;
 
 import java.util.List;
 
