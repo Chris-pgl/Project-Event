@@ -10,7 +10,6 @@ import java.util.List;
 @Table(name = "localita")
 public class Localita {
     @Id
-    @Column(name = "id_localita")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String regione;

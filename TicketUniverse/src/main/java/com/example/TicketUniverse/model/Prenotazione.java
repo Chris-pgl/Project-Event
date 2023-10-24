@@ -22,13 +22,14 @@ public class Prenotazione {
     @JoinColumn(name = "id_evento")
     private Evento evento;
 
-    public Prenotazione(Long id, LocalDateTime data, Utente utente, Integer quantitaPrenotata, Boolean isConvalidata, Double prezzoTotale) {
+    public Prenotazione(Long id, LocalDateTime data, Utente utente, Integer quantitaPrenotata, Boolean isConvalidata, Double prezzoTotale, Evento evento) {
         this.id = id;
         this.data = data;
         this.utente = utente;
         this.quantitaPrenotata = quantitaPrenotata;
         this.isConvalidata = isConvalidata;
         this.prezzoTotale = prezzoTotale;
+        this.evento = evento;
     }
 
     public Prenotazione() {
