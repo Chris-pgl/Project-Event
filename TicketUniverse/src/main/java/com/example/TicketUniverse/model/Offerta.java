@@ -1,6 +1,7 @@
 package com.example.TicketUniverse.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.Data;
 
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.List;
 @Entity
 @Data
 public class Offerta {
+    @Id
     private Long id;
     private List<Evento> eventiOfferta;
     private Double prezzoMedio;
