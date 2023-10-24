@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface LocalitaRepository extends JpaRepository<Long, Localita> {
+public interface LocalitaRepository extends JpaRepository<Localita, Long> {
 
 }
