@@ -18,6 +18,9 @@ public class Prenotazione {
     private Integer quantitaPrenotata;
     private Boolean isConvalidata;
     private Double prezzoTotale;
+    @ManyToOne
+    @JoinColumn(name = "id_evento")
+    private Evento evento;
 
     public Prenotazione(Long id, LocalDateTime data, Utente utente, Integer quantitaPrenotata, Boolean isConvalidata, Double prezzoTotale) {
         this.id = id;

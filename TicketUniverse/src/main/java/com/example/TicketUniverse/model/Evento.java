@@ -5,6 +5,7 @@ import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Data
@@ -24,5 +25,7 @@ public class Evento {
     @ManyToOne
     @JoinColumn(name = "id_categoria")
     private Categoria categoria;
+    @OneToMany(mappedBy = "evento")
+    private List<Prenotazione> prenoazioni;
 
 }
