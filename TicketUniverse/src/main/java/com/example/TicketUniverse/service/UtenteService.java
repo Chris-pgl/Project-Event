@@ -19,8 +19,8 @@ public class UtenteService {
 
     public List<UtenteDTO> getAllUtenti(){
         List<Utente> utenti = utenteRepository.findAll();
-        List<UtenteDTO> utentiDto = new ArrayList<>();
-        utenti.forEach(utente -> utentiDto.add(utenteMapper.toDto(utente)));
+        List<UtenteDTO> utentiDto = utenteMapper.toDto(utenti);
+        
         return utentiDto;
     }
 }

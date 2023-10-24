@@ -5,7 +5,6 @@ import org.mapstruct.Mapper;
 
 import com.example.TicketUniverse.dto.UtenteDTO;
 import com.example.TicketUniverse.model.Utente;
-import org.springframework.context.annotation.Bean;
 
 
 @Mapper(componentModel = "spring")
