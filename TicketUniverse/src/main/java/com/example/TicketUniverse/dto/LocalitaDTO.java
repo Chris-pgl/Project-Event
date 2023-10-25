@@ -11,8 +11,7 @@ public class LocalitaDTO {
     private String citta;
     private List<EventoDTO> eventi;
 
-    public LocalitaDTO() {
-    }
+
 
 
 }

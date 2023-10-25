@@ -7,9 +7,7 @@ import java.util.List;
 @Data
 public class CategoriaDTO {
 
-
     private String nome;
     private List<EventoDTO> eventi;
-
 
 }

@@ -1,6 +1,6 @@
 package com.example.TicketUniverse.dto;
 
-import com.example.TicketUniverse.model.Utente;
+
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -17,8 +17,7 @@ public class PrenotazioneDTO {
 
     private Double prezzoTotale;
 
-    public PrenotazioneDTO() {
-    }
+
 
 
 }

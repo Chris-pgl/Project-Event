@@ -14,7 +14,7 @@ public class Evento {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private LocalDate data;
+    private LocalDateTime data;
     private String nome;
     @ManyToOne
     @JoinColumn(name = "id_localita")
