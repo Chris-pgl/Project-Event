@@ -6,6 +6,8 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface LocalitaMapper extends EntityMapper<LocalitaDTO, Localita> {
+    @Override
     LocalitaDTO toDto(Localita localita);
+    @Override
     Localita toEntity(LocalitaDTO localitaDTO);
 }
