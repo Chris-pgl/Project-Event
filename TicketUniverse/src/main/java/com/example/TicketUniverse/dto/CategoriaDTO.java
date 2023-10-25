@@ -1,6 +1,7 @@
 package com.example.TicketUniverse.dto;
 
 import com.example.TicketUniverse.model.Evento;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import java.util.List;
@@ -8,6 +9,4 @@ import java.util.List;
 public class CategoriaDTO {
 
     private String nome;
-    private List<EventoDTO> eventi;
-
 }

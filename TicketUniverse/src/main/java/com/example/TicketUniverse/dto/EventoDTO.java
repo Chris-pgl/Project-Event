@@ -1,5 +1,6 @@
 package com.example.TicketUniverse.dto;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -11,7 +12,9 @@ public class EventoDTO {
     private String descrizione;
     private Double prezzo;
     private Integer bigliettiDisponibili;
+    @JsonBackReference
     private CategoriaDTO categoria;
+    @JsonBackReference
     private LocalitaDTO localita;
     private LocalDateTime data;
 

@@ -1,5 +1,6 @@
 package com.example.TicketUniverse.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -18,6 +19,7 @@ public class Prenotazione {
     private Integer quantitaPrenotata;
     private Boolean isConvalidata;
     private Double prezzoTotale;
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "id_evento")
     private Evento evento;

@@ -1,5 +1,8 @@
 package com.example.TicketUniverse.dto;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import java.util.List;
@@ -10,9 +13,5 @@ public class LocalitaDTO {
     private String provincia;
     private String citta;
     private String indirizzo;
-    private List<EventoDTO> eventi;
-
-
-
 
 }

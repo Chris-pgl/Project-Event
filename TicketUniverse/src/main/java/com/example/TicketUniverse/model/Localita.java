@@ -1,5 +1,7 @@
 package com.example.TicketUniverse.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,6 +18,7 @@ public class Localita {
     private String provincia;
     private String citta;
     private String indirizzo;
+    @JsonManagedReference
     @OneToMany(mappedBy = "localita")
     private List<Evento> eventi;
 }

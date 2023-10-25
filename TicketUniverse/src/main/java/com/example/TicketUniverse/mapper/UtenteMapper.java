@@ -9,9 +9,9 @@ import com.example.TicketUniverse.model.Utente;
 
 @Mapper(componentModel = "spring")
 public interface UtenteMapper extends EntityMapper<UtenteDTO, Utente> {
-
+    @Override
     UtenteDTO toDto(Utente utente);
-
+    @Override
     Utente toEntity(UtenteDTO utenteDTO);
 
 }

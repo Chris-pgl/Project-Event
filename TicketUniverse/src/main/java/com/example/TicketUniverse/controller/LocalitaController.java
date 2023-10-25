@@ -3,7 +3,6 @@ package com.example.TicketUniverse.controller;
 import com.example.TicketUniverse.dto.LocalitaDTO;
 import com.example.TicketUniverse.service.LocalitaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cglib.core.Local;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

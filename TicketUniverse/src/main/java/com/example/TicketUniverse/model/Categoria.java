@@ -2,6 +2,7 @@ package com.example.TicketUniverse.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -13,7 +14,7 @@ public class Categoria {
 	private Long id;
 	
 	private String nome;
-	
+	@JsonManagedReference
 	@OneToMany(mappedBy = "categoria")
 	private List<Evento> eventi;
 

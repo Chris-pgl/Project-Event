@@ -26,8 +26,9 @@ public class EventoService {
         return eventiDto;
     }
 
-    public Evento salvaEvento(Evento evento){
-        return eventoRepository.save(evento);
+    public EventoDTO salvaEvento(EventoDTO evento){
+        eventoRepository.save(eventoMapper.toEntity( evento));
+        return evento;
     }
 
 
@@ -38,14 +39,14 @@ public class EventoService {
     }
 
 
-    public Evento eventoPerId(Long id){
-        return eventoRepository.findById(id).orElse(null);
+    public EventoDTO eventoPerId(Long id){
+        return eventoMapper.toDto( eventoRepository.findById(id).orElse(null));
     }
 
-    public Evento aggiornaEvento(Evento eventoEsistente, EventoDTO eventoDTO){
-        eventoEsistente = eventoMapper.toEntity(eventoDTO);
-        return eventoEsistente;
-    }
+//    public EventoDTO aggiornaEvento(EventoDTO eventoEsistente, EventoDTO eventoDTO){
+//        eventoEsistente = eventoMapper.toEntity(eventoDTO);
+//        return eventoEsistente;
+//    }
 
 
     public void eliminaEvento(Evento evento){
