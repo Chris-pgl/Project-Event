@@ -49,8 +49,9 @@ public class EventoService {
 //    }
 
 
-    public void eliminaEvento(Evento evento){
+    public String eliminaEvento(Evento evento){
         eventoRepository.delete(evento);
+        return "eliminato correttamente";
     }
 
     public Evento eliminaPerID(Long id ){

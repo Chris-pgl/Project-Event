@@ -53,14 +53,15 @@ public class EventoController {
 //    }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Void> deleteEvento(@PathVariable Long id){
+    public ResponseEntity<String> deleteEvento(@PathVariable Long id){
         Evento evento = eventoService.eliminaPerID(id);
-        if (evento != null){
-            eventoService.eliminaEvento(evento);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }else{
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        return ResponseEntity.ok(  eventoService.eliminaEvento(evento));
+//        if (evento != null){
+//            eventoService.eliminaEvento(evento);
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }else{
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
 
     }
 
