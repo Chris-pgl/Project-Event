@@ -12,10 +12,8 @@ public class EventoDTO {
     private String descrizione;
     private Double prezzo;
     private Integer bigliettiDisponibili;
-    @JsonBackReference
-    private CategoriaDTO categoria;
-    @JsonBackReference
-    private LocalitaDTO localita;
+    private Long idCategoria;
+    private Long idLocalita;
     private LocalDateTime data;
 
 }

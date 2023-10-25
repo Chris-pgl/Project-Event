@@ -26,10 +26,10 @@ public class EventoService {
         return eventiDto;
     }
 
-    public EventoDTO salvaEvento(EventoDTO evento){
-        eventoRepository.save(eventoMapper.toEntity( evento));
-        return evento;
-    }
+//    public EventoDTO salvaEvento(EventoDTO evento){
+//        eventoRepository.save(eventoMapper.toEntity( evento));
+//        return evento;
+//    }
 
 
     public String creaEvento(EventoDTO eventoDTO){

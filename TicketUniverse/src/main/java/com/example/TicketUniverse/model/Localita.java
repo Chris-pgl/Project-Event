@@ -12,7 +12,7 @@ import java.util.List;
 @Table(name = "localita")
 public class Localita {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String regione;
     private String provincia;

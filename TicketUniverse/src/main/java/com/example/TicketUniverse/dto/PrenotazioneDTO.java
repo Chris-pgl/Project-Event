@@ -9,7 +9,7 @@ public class PrenotazioneDTO {
 
     private LocalDateTime data;
 
-    private UtenteDTO utente;
+    private Long idUtente;
 
     private Integer quantitaPrenotata;
 

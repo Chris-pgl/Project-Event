@@ -14,7 +14,6 @@ public class Categoria {
 	private Long id;
 	
 	private String nome;
-	@JsonManagedReference
 	@OneToMany(mappedBy = "categoria")
 	private List<Evento> eventi;
 
