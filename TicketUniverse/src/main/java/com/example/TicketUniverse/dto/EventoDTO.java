@@ -1,5 +1,8 @@
 package com.example.TicketUniverse.dto;
 
+import java.time.LocalDate;
+
+
 public class EventoDTO {
 
 
@@ -9,6 +12,8 @@ public class EventoDTO {
     private Integer bigliettiDisponibili;
     private CategoriaDTO categoria;
     private LocalitaDTO localita;
+
+    private LocalDate data;
 
 
     public EventoDTO() {
@@ -60,5 +65,22 @@ public class EventoDTO {
 
     public void setLocalita(LocalitaDTO localita) {
         this.localita = localita;
+    }
+
+
+    public void setPrezzo(Double prezzo) {
+        this.prezzo = prezzo;
+    }
+
+    public void setBigliettiDisponibili(Integer bigliettiDisponibili) {
+        this.bigliettiDisponibili = bigliettiDisponibili;
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
     }
 }
