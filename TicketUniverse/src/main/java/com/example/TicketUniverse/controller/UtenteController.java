@@ -25,7 +25,11 @@ public class UtenteController {
         return ResponseEntity.ok( utenteService.createUtente(utenteDTO));
     }
     @PutMapping("/modifica")
-    public ResponseEntity<String> modificaUtente(@RequestParam Long id, @RequestBody UtenteDTO utenteDTO){
+    public ResponseEntity<String> updateUtente(@RequestParam Long id, @RequestBody UtenteDTO utenteDTO){
         return ResponseEntity.ok( utenteService.updateUtente(id, utenteDTO));
+    }
+    @DeleteMapping("/cancella")
+    public ResponseEntity<String > deleteUtente (@RequestParam Long id){
+        return ResponseEntity.ok(utenteService.deleteUtente(id));
     }
 }
