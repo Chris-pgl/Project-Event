@@ -1,9 +1,10 @@
 package com.example.TicketUniverse.dto;
 
 import com.example.TicketUniverse.model.Utente;
+import lombok.Data;
 
 import java.time.LocalDateTime;
-
+@Data
 public class PrenotazioneDTO {
 
     private LocalDateTime data;
@@ -12,50 +13,12 @@ public class PrenotazioneDTO {
 
     private Integer quantitaPrenotata;
 
-    private Boolean isCoonvalidata;
+    private Boolean isConvalidata;
 
     private Double prezzoTotale;
 
     public PrenotazioneDTO() {
     }
 
-    public LocalDateTime getData() {
-        return data;
-    }
 
-    public void setData(LocalDateTime data) {
-        this.data = data;
-    }
-
-    public UtenteDTO getUtente() {
-        return utente;
-    }
-
-    public void setUtente(UtenteDTO utente) {
-        this.utente = utente;
-    }
-
-    public Integer getQuantitaPrenotata() {
-        return quantitaPrenotata;
-    }
-
-    public void setQuantitaPrenotata(Integer quantitaPrenotata) {
-        this.quantitaPrenotata = quantitaPrenotata;
-    }
-
-    public Boolean getCoonvalidata() {
-        return isCoonvalidata;
-    }
-
-    public void setCoonvalidata(Boolean coonvalidata) {
-        isCoonvalidata = coonvalidata;
-    }
-
-    public Double getPrezzoTotale() {
-        return prezzoTotale;
-    }
-
-    public void setPrezzoTotale(Double prezzoTotale) {
-        this.prezzoTotale = prezzoTotale;
-    }
 }
