@@ -45,8 +45,8 @@ public class PrenotazioneService {
         if(prenotazioneDTO.getIdEvento()!=null){
             prenotazione.setEvento(eventoRepository.findById(prenotazioneDTO.getIdEvento()).get());
         }
-        if (prenotazioneDTO.getConvalidata()!=null){
-            prenotazione.setConvalidata(prenotazioneDTO.getConvalidata());
+        if (prenotazioneDTO.getIsConvalidata()!=null){
+            prenotazione.setIsConvalidata(prenotazioneDTO.getIsConvalidata());
         }
         if (prenotazioneDTO.getData()!=null){
            prenotazione.setData(prenotazioneDTO.getData());

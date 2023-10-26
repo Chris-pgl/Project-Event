@@ -1,8 +1,11 @@
 package com.example.TicketUniverse.dto;
 
 
+import lombok.Data;
+
 import java.time.LocalDateTime;
 
+@Data
 
 public class EventoDTO {
     private Long id;
@@ -14,67 +17,4 @@ public class EventoDTO {
     private Long idLocalita;
     private LocalDateTime data;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getDescrizione() {
-        return descrizione;
-    }
-
-    public void setDescrizione(String descrizione) {
-        this.descrizione = descrizione;
-    }
-
-    public Double getPrezzo() {
-        return prezzo;
-    }
-
-    public void setPrezzo(Double prezzo) {
-        this.prezzo = prezzo;
-    }
-
-    public Integer getBigliettiDisponibili() {
-        return bigliettiDisponibili;
-    }
-
-    public void setBigliettiDisponibili(Integer bigliettiDisponibili) {
-        this.bigliettiDisponibili = bigliettiDisponibili;
-    }
-
-    public Long getIdCategoria() {
-        return idCategoria;
-    }
-
-    public void setIdCategoria(Long idCategoria) {
-        this.idCategoria = idCategoria;
-    }
-
-    public Long getIdLocalita() {
-        return idLocalita;
-    }
-
-    public void setIdLocalita(Long idLocalita) {
-        this.idLocalita = idLocalita;
-    }
-
-    public LocalDateTime getData() {
-        return data;
-    }
-
-    public void setData(LocalDateTime data) {
-        this.data = data;
-    }
 }
