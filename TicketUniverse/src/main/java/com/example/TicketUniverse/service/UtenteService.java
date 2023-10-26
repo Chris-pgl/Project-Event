@@ -16,43 +16,52 @@ public class UtenteService {
     private UtenteRepository utenteRepository;
     @Autowired
     private UtenteMapper utenteMapper;
-    public String createUtente(UtenteDTO utenteDTO){
+
+    public String createUtente(UtenteDTO utenteDTO) {
         Utente utente = utenteMapper.toEntity(utenteDTO);
         utenteRepository.save(utente);
         return "salvato con successo";
     }
-    public List<UtenteDTO> getAllUtenti(){
+
+    public List<UtenteDTO> getAllUtenti() {
         List<Utente> utenti = utenteRepository.findAll();
         List<UtenteDTO> utentiDto = utenteMapper.toDto(utenti);
         return utentiDto;
     }
-    public UtenteDTO getUtenteByCodiceFiscale(String cf){
+
+    public UtenteDTO getUtenteByCodiceFiscale(String cf) {
         Utente utente = utenteRepository.findByCodiceFiscale(cf);
         UtenteDTO utenteDTO = utenteMapper.toDto(utente);
         return utenteDTO;
     }
-    public String updateUtente(Long id, UtenteDTO utenteDTO){
+
+    public String updateUtente(Long id, UtenteDTO utenteDTO) {
         Utente utente = utenteRepository.findById(id).get();
-        if(utenteDTO.getNome()!=null){
+        if (utenteDTO.getNome() != null) {
             utente.setNome(utenteDTO.getNome());
         }
-        if (utenteDTO.getCognome()!=null){
+        if (utenteDTO.getCognome() != null) {
             utente.setCognome(utenteDTO.getCognome());
         }
-        if (utenteDTO.getEmail()!=null){
+        if (utenteDTO.getEmail() != null) {
             utente.setEmail(utenteDTO.getEmail());
         }
-        if (utenteDTO.getPassword()!=null){
+        if (utenteDTO.getPassword() != null) {
             utente.setPassword(utenteDTO.getPassword());
         }
-        if (utenteDTO.getCodiceFiscale()!=null){
+        if (utenteDTO.getCodiceFiscale() != null) {
             utente.setCodiceFiscale(utenteDTO.getCodiceFiscale());
         }
         utenteRepository.save(utente);
         return "aggiornato con successo ";
     }
-    public String deleteUtente(Long id){
+
+    public String deleteUtente(Long id) {
         utenteRepository.deleteById(id);
         return "cancellato con successo";
+    }
+
+    public UtenteDTO getUtenteById(Long id) {
+        return utenteMapper.toDto(utenteRepository.findById(id).get());
     }
 }

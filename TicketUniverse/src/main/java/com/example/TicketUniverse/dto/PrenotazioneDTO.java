@@ -6,16 +6,33 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class PrenotazioneDTO {
-
+    private Long id;
     private LocalDateTime data;
 
     private Long idUtente;
+    private Long idEvento;
 
     private Integer quantitaPrenotata;
 
     private Boolean isConvalidata;
 
     private Double prezzoTotale;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getIdEvento() {
+        return idEvento;
+    }
+
+    public void setIdEvento(Long idEvento) {
+        this.idEvento = idEvento;
+    }
 
     public LocalDateTime getData() {
         return data;

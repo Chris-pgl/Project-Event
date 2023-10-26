@@ -1,5 +1,6 @@
 package com.example.TicketUniverse.controller;
 
+import com.example.TicketUniverse.dto.PrenotazioneDTO;
 import com.example.TicketUniverse.dto.UtenteDTO;
 import com.example.TicketUniverse.service.UtenteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,10 @@ public class UtenteController {
     @GetMapping("/all")
     public @ResponseBody List<UtenteDTO> getAllUtenti(){
         return utenteService.getAllUtenti();
+    }
+    @GetMapping("{id}")
+    public @ResponseBody UtenteDTO getUtenteById(@PathVariable Long id){
+        return utenteService.getUtenteById(id);
     }
     @GetMapping("/")
     public @ResponseBody UtenteDTO getUtenteByCodiceFiscale(@RequestParam String cf) {return utenteService.getUtenteByCodiceFiscale(cf);}

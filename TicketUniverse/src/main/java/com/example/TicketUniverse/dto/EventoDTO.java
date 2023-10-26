@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 
 
 public class EventoDTO {
-
+    private Long id;
     private String nome;
     private String descrizione;
     private Double prezzo;
@@ -13,6 +13,14 @@ public class EventoDTO {
     private Long idCategoria;
     private Long idLocalita;
     private LocalDateTime data;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
