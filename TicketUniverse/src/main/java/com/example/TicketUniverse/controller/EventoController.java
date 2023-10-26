@@ -39,30 +39,16 @@ public class EventoController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    @PutMapping("modifica")
+    public ResponseEntity<EventoDTO> modiificaEvento(@RequestParam Long id, @RequestBody EventoDTO eventoDTO){
+        return ResponseEntity.ok(eventoService.aggiornaEvento(id, eventoDTO));
+    }
 
-//    @PutMapping("{id}")
-//    public ResponseEntity<EventoDTO> updateEvento(@PathVariable Long id, @RequestBody EventoDTO eventoDTO){
-//        EventoDTO eventoEsistente = eventoService.eventoPerId(id);
-//        if (eventoEsistente != null){
-//            Evento updateEvento = eventoService.aggiornaEvento(eventoEsistente, eventoDTO);
-//            EventoDTO salvaEvento = eventoService.salvaEvento(updateEvento);
-//            return new ResponseEntity<>(salvaEvento, HttpStatus.OK);
-//        }else{
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//        }
-//    }
 
     @DeleteMapping("{id}")
     public ResponseEntity<String> deleteEvento(@PathVariable Long id){
         Evento evento = eventoService.eliminaPerID(id);
         return ResponseEntity.ok(  eventoService.eliminaEvento(evento));
-//        if (evento != null){
-//            eventoService.eliminaEvento(evento);
-//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//        }else{
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//        }
-
     }
 
 
