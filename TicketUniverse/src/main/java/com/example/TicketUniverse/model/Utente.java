@@ -1,5 +1,6 @@
 package com.example.TicketUniverse.model;
 
+import com.example.TicketUniverse.enumerati.Status;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -20,6 +21,7 @@ public class Utente {
     private String codiceFiscale;
     @OneToMany(mappedBy = "utente", cascade = CascadeType.ALL)
     private List<Prenotazione> prenotazioni;
+    private Status status;
 
     public Utente(Long id, String nome, String cognome, String password, String email, String codiceFiscale, List<Prenotazione> prenotazioni) {
         this.id = id;

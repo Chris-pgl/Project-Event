@@ -2,6 +2,7 @@ package com.example.TicketUniverse.dto;
 
 
 
+import com.example.TicketUniverse.enumerati.Status;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -19,5 +20,5 @@ public class PrenotazioneDTO {
     private Boolean isConvalidata;
 
     private Double prezzoTotale;
-
+    private Status status;
 }

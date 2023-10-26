@@ -1,9 +1,11 @@
 package com.example.TicketUniverse.service;
 
 import com.example.TicketUniverse.dto.EventoDTO;
+import com.example.TicketUniverse.enumerati.Status;
 import com.example.TicketUniverse.mapper.EventoMapper;
 import com.example.TicketUniverse.model.Categoria;
 import com.example.TicketUniverse.model.Evento;
+import com.example.TicketUniverse.model.Localita;
 import com.example.TicketUniverse.repositories.CategoriaRepository;
 import com.example.TicketUniverse.repositories.EventoRepository;
 import com.example.TicketUniverse.repositories.LocalitaRepository;
@@ -11,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class EventoService {
@@ -27,21 +30,16 @@ public class EventoService {
 
 
     public List<EventoDTO> getAllEvent() {
-        List<Evento> eventi = eventoRepository.findAll();
+        List<Evento> eventi = eventoRepository.findAll().stream().filter(u->u.getStatus().equals(Status.ATTIVO)).collect(Collectors.toList());
         List<EventoDTO> eventiDto = eventoMapper.toDto(eventi);
         return eventiDto;
     }
 
-//    public EventoDTO salvaEvento(EventoDTO evento){
-//        eventoRepository.save(eventoMapper.toEntity( evento));
-//        return evento;
-//    }
 
-
-    public String creaEvento(EventoDTO eventoDTO) {
+    public EventoDTO creaEvento(EventoDTO eventoDTO) {
         Evento evento = eventoMapper.toEntity(eventoDTO);
         eventoRepository.save(evento);
-        return "evento salvato";
+        return eventoMapper.toDto(evento);
     }
 
 
@@ -77,14 +75,12 @@ public class EventoService {
     }
 
 
-    public String eliminaEvento(Evento evento) {
-        eventoRepository.delete(evento);
-        return "eliminato correttamente";
-    }
+    public String eliminaPerID(Long id) {
+        Evento evento = eventoRepository.findById(id).get();
+        evento.setStatus(Status.CANCELLATO);
+        eventoRepository.save(evento);
+        return "cancellato con successo";
 
-    public Evento eliminaPerID(Long id) {
-        eventoRepository.deleteById(id);
-        return null;
     }
 
 

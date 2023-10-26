@@ -1,5 +1,6 @@
 package com.example.TicketUniverse.model;
 
+import com.example.TicketUniverse.enumerati.Status;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -24,6 +25,7 @@ public class Prenotazione {
     @ManyToOne
     @JoinColumn(name = "id_evento")
     private Evento evento;
+    private Status status;
 
     public Prenotazione(Long id, LocalDateTime data, Utente utente, Integer quantitaPrenotata, Boolean isConvalidata, Double prezzoTotale, Evento evento) {
         this.id = id;

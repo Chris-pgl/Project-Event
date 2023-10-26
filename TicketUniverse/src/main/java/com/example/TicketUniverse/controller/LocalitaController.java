@@ -14,7 +14,7 @@ public class LocalitaController {
     @Autowired
     private LocalitaService localitaService;
     @PostMapping("/add")
-    public ResponseEntity<String> createLocalita(@RequestBody LocalitaDTO localitaDTO){
+    public ResponseEntity<LocalitaDTO> createLocalita(@RequestBody LocalitaDTO localitaDTO){
         return ResponseEntity.ok( localitaService.createLocalita(localitaDTO));
     }
     @GetMapping("/all")
@@ -26,7 +26,7 @@ public class LocalitaController {
         return localitaService.getLocalitaById(id);
     }
     @PutMapping("/modifica")
-    public ResponseEntity<String> updateLocalita(@RequestParam Long id, @RequestBody LocalitaDTO localitaDTO){
+    public ResponseEntity<LocalitaDTO> updateLocalita(@RequestParam Long id, @RequestBody LocalitaDTO localitaDTO){
         return ResponseEntity.ok(localitaService.updateLocalita(id, localitaDTO));
     }
     @DeleteMapping("/cancella")

@@ -1,5 +1,6 @@
 package com.example.TicketUniverse.model;
 
+import com.example.TicketUniverse.enumerati.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,6 +18,7 @@ public class BackOffice {
     private String cognome;
     private String password;
     private String email;
+    private Status status;
 
     public BackOffice(Long id, String nome, String cognome, String password, String email) {
         this.id = id;

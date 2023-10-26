@@ -1,5 +1,6 @@
 package com.example.TicketUniverse.model;
 
+import com.example.TicketUniverse.enumerati.Status;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -21,5 +22,6 @@ public class Localita {
     @JsonManagedReference
     @OneToMany(mappedBy = "localita")
     private List<Evento> eventi;
+    private Status status;
 
 }

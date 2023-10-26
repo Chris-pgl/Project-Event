@@ -26,7 +26,7 @@ public class EventoController {
 
 
     @PostMapping("crea")
-    public @ResponseBody String creaEvento(@RequestBody EventoDTO eventoDTO){
+    public @ResponseBody EventoDTO creaEvento(@RequestBody EventoDTO eventoDTO){
         return eventoService.creaEvento(eventoDTO);
     }
 
@@ -47,8 +47,7 @@ public class EventoController {
 
     @DeleteMapping("{id}")
     public ResponseEntity<String> deleteEvento(@PathVariable Long id){
-        Evento evento = eventoService.eliminaPerID(id);
-        return ResponseEntity.ok(  eventoService.eliminaEvento(evento));
+        return ResponseEntity.ok(  eventoService.eliminaPerID(id));
     }
 
 

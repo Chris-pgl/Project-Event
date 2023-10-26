@@ -1,5 +1,6 @@
 package com.example.TicketUniverse.model;
 
+import com.example.TicketUniverse.enumerati.Status;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
@@ -7,7 +8,6 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Data
@@ -32,5 +32,6 @@ public class Evento {
     @JsonManagedReference
     @OneToMany(mappedBy = "evento")
     private List<Prenotazione> prenoazioni;
+    private Status status;
 
 }

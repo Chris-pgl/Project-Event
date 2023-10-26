@@ -17,7 +17,7 @@ public class UtenteController {
 
     @GetMapping("/all")
     public @ResponseBody List<UtenteDTO> getAllUtenti(){
-        return utenteService.getAllUtenti();
+        return utenteService.getAllUtentiAttivi();
     }
     @GetMapping("{id}")
     public @ResponseBody UtenteDTO getUtenteById(@PathVariable Long id){
@@ -26,11 +26,11 @@ public class UtenteController {
     @GetMapping("/")
     public @ResponseBody UtenteDTO getUtenteByCodiceFiscale(@RequestParam String cf) {return utenteService.getUtenteByCodiceFiscale(cf);}
     @PostMapping("/add")
-    public ResponseEntity<String> postUtente(@RequestBody UtenteDTO utenteDTO){
+    public ResponseEntity<UtenteDTO> postUtente(@RequestBody UtenteDTO utenteDTO){
         return ResponseEntity.ok( utenteService.createUtente(utenteDTO));
     }
     @PutMapping("/modifica")
-    public ResponseEntity<String> updateUtente(@RequestParam Long id, @RequestBody UtenteDTO utenteDTO){
+    public ResponseEntity<UtenteDTO> updateUtente(@RequestParam Long id, @RequestBody UtenteDTO utenteDTO){
         return ResponseEntity.ok( utenteService.updateUtente(id, utenteDTO));
     }
     @DeleteMapping("/cancella")

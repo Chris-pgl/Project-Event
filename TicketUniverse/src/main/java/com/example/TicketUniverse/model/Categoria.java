@@ -2,6 +2,8 @@ package com.example.TicketUniverse.model;
 
 import java.util.List;
 import java.util.Objects;
+
+import com.example.TicketUniverse.enumerati.Status;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -15,6 +17,7 @@ public class Categoria {
 	private String nome;
 	@OneToMany(mappedBy = "categoria")
 	private List<Evento> eventi;
+	private Status status;
 
 	public Categoria() {
 	}

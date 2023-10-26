@@ -1,6 +1,7 @@
 package com.example.TicketUniverse.service;
 
 import com.example.TicketUniverse.dto.UtenteDTO;
+import com.example.TicketUniverse.enumerati.Status;
 import com.example.TicketUniverse.mapper.UtenteMapper;
 import com.example.TicketUniverse.model.Utente;
 import com.example.TicketUniverse.repositories.UtenteRepository;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UtenteService {
@@ -17,17 +19,18 @@ public class UtenteService {
     @Autowired
     private UtenteMapper utenteMapper;
 
-    public String createUtente(UtenteDTO utenteDTO) {
+    public UtenteDTO createUtente(UtenteDTO utenteDTO) {
         Utente utente = utenteMapper.toEntity(utenteDTO);
         utenteRepository.save(utente);
-        return "salvato con successo";
+        return utenteMapper.toDto(utente);
     }
 
-    public List<UtenteDTO> getAllUtenti() {
-        List<Utente> utenti = utenteRepository.findAll();
+    public List<UtenteDTO> getAllUtentiAttivi() {
+        List<Utente> utenti = utenteRepository.findAll().stream().filter(u->u.getStatus().equals(Status.ATTIVO)).collect(Collectors.toList());
         List<UtenteDTO> utentiDto = utenteMapper.toDto(utenti);
         return utentiDto;
     }
+
 
     public UtenteDTO getUtenteByCodiceFiscale(String cf) {
         Utente utente = utenteRepository.findByCodiceFiscale(cf);
@@ -35,7 +38,7 @@ public class UtenteService {
         return utenteDTO;
     }
 
-    public String updateUtente(Long id, UtenteDTO utenteDTO) {
+    public UtenteDTO updateUtente(Long id, UtenteDTO utenteDTO) {
         Utente utente = utenteRepository.findById(id).get();
         if (utenteDTO.getNome() != null) {
             utente.setNome(utenteDTO.getNome());
@@ -53,11 +56,13 @@ public class UtenteService {
             utente.setCodiceFiscale(utenteDTO.getCodiceFiscale());
         }
         utenteRepository.save(utente);
-        return "aggiornato con successo ";
+        return utenteMapper.toDto(utente);
     }
 
     public String deleteUtente(Long id) {
-        utenteRepository.deleteById(id);
+        Utente utente = utenteRepository.findById(id).get();
+        utente.setStatus(Status.CANCELLATO);
+        utenteRepository.save(utente);
         return "cancellato con successo";
     }
 

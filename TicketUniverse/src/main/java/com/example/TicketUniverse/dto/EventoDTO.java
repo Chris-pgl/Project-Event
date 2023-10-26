@@ -1,6 +1,7 @@
 package com.example.TicketUniverse.dto;
 
 
+import com.example.TicketUniverse.enumerati.Status;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -16,5 +17,5 @@ public class EventoDTO {
     private Long idCategoria;
     private Long idLocalita;
     private LocalDateTime data;
-
+    private Status status;
 }

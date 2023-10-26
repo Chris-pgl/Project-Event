@@ -30,12 +30,12 @@ public class PrenotazioneController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<String> postPrenotazione(@RequestBody PrenotazioneDTO prenotazioneDTO) {
+    public ResponseEntity<PrenotazioneDTO> postPrenotazione(@RequestBody PrenotazioneDTO prenotazioneDTO) {
         return ResponseEntity.ok(prenotazioneService.createPrenotazione(prenotazioneDTO));
     }
 
     @PutMapping("/modifica")
-    public ResponseEntity<String> updatePrenotazione(@RequestParam Long id, @RequestBody PrenotazioneDTO prenotazioneDTO) {
+    public ResponseEntity<PrenotazioneDTO> updatePrenotazione(@RequestParam Long id, @RequestBody PrenotazioneDTO prenotazioneDTO) {
         return ResponseEntity.ok(prenotazioneService.updatePrenotazione(id, prenotazioneDTO));
     }
 
