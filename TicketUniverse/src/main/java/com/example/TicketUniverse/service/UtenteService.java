@@ -21,6 +21,7 @@ public class UtenteService {
 
     public UtenteDTO createUtente(UtenteDTO utenteDTO) {
         Utente utente = utenteMapper.toEntity(utenteDTO);
+        utente.setStatus(Status.ATTIVO);
         utenteRepository.save(utente);
         return utenteMapper.toDto(utente);
     }

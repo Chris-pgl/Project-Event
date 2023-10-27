@@ -33,6 +33,7 @@ public class PrenotazioneService {
         prenotazione.setPrezzoTotale(prenotazione.getQuantitaPrenotata()*e.getPrezzo());
         prenotazione.setData(LocalDateTime.now());
         prenotazione.setIsConvalidata(false);
+        prenotazione.setStatus(Status.ATTIVO);
         e.setBigliettiDisponibili(e.getBigliettiDisponibili()-prenotazione.getQuantitaPrenotata());
         eventoRepository.save(e);
         prenotazioneRepository.save(prenotazione);
