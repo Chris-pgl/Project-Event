@@ -40,7 +40,7 @@ public class PrenotazioneController {
     }
 
     @DeleteMapping("/cancella")
-    public ResponseEntity<String> deletePrenotazione(@RequestParam Long id) {
+    public ResponseEntity<String> deletePrenotazione(@PathVariable Long id) {
         return ResponseEntity.ok(prenotazioneService.deletePrenotazione(id));
     }
 }

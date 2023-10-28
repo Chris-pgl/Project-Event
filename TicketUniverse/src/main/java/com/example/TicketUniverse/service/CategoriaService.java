@@ -19,6 +19,7 @@ public class CategoriaService {
     private CategoriaMapper categoriaMapper;
     public CategoriaDTO creaCategoria(CategoriaDTO categoriaDTO){
         Categoria categoria = categoriaMapper.toEntity(categoriaDTO);
+        categoria.setStatus(Status.ATTIVO);
         categoriaRepository.save(categoria);
         return categoriaMapper.toDto(categoria);
     }
