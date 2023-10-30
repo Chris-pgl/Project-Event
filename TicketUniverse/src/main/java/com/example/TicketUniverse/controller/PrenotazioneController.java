@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/prenotazione")
+@CrossOrigin(origins = "localhost:4200")
 public class PrenotazioneController {
     @Autowired
     private PrenotazioneService prenotazioneService;
@@ -39,9 +40,9 @@ public class PrenotazioneController {
         return ResponseEntity.ok(prenotazioneService.updatePrenotazione(id, prenotazioneDTO));
     }
 
-    @DeleteMapping("/cancella")
-    public ResponseEntity<String> deletePrenotazione(@PathVariable Long id) {
-        return ResponseEntity.ok(prenotazioneService.deletePrenotazione(id));
+    @DeleteMapping("/cancella/{id}")
+    public void  deletePrenotazione(@PathVariable Long id) {
+         prenotazioneService.deletePrenotazione(id);
     }
 }
 

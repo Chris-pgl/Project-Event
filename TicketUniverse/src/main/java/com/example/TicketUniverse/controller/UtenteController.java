@@ -35,7 +35,7 @@ public class UtenteController {
         return ResponseEntity.ok( utenteService.updateUtente(id, utenteDTO));
     }
     @DeleteMapping("/cancella")
-    public ResponseEntity<String > deleteUtente (@RequestParam Long id){
-        return ResponseEntity.ok(utenteService.deleteUtente(id));
+    public void deleteUtente (@RequestParam Long id){
+        utenteService.deleteUtente(id);
     }
 }
